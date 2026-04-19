@@ -23,14 +23,14 @@ class FaceService:
         logger.info("Chargement du modèle InsightFace (ArcFace)...")
 
         # Initialiser InsightFace avec le modèle buffalo_l (inclut ArcFace)
-        self.app = FaceAnalysis(
-            name="buffalo_l",
+	self.app = FaceAnalysis(
+            name="buffalo_sc",
             root=os.path.join(os.path.dirname(__file__), "models"),
             providers=["CPUExecutionProvider"],  # GPU: ["CUDAExecutionProvider"]
         )
 
         # Préparer le modèle — taille d'entrée 640x640
-        self.app.prepare(ctx_id=0, det_size=(640, 640))
+        self.app.prepare(ctx_id=0, det_size=(320, 320))
 
         logger.info("Modèle chargé avec succès !")
 
