@@ -23,7 +23,7 @@ class FaceService:
             logger.info("Cache buffalo_l supprime")
         
         self.app = FaceAnalysis(
-            name="buffalo_sc",
+            name="buffalo_l",
             root=model_dir,
             providers=["CPUExecutionProvider"],
             allowed_modules=["detection", "recognition"],
